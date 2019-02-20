@@ -56,14 +56,14 @@ export default {
           datasets: [
             {
               data: this.temps,
-              label: "Av.Temp",
+              label: "Av.Temp (F)",
               //backgroundColor: ["rgba(54, 162, 235, 0.5)"],
               borderColor: ["rgb(54, 162, 235)"],
               borderWidth: 3,
             },
             {
               data: this.humidities,
-              label: "Humidity",
+              label: "Humidity(%)",
               //backgroundColor: ["rgba(71, 183,132,0.5)"],
               borderColor: ["rgb(71, 183,132,.5)"],
               borderWidth: 3,
