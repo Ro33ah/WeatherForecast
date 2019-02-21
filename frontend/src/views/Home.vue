@@ -1,6 +1,7 @@
 <template>
   <p class="homeText">
-    WELCOME TO THE REST OF YOUR LIFE...OR NOT?
+    A SIMPLE WEBPAGE :D
+    <br>
     <b-form-select class="col-sm-4" v-model="selected" :options="options" @change="getWeather($event)"/>
     <br>
     <canvas v-show="isCanvasNull" id="forecastChart">
@@ -9,8 +10,6 @@
 </template>
 
 <script>
-import chart from "chart.js";
-import {Line} from "vue-chartjs";
 import {APIService} from '../APIService';
 //const API_URL = 'https://localhost:5001';
 const apiService = new APIService();
@@ -63,7 +62,7 @@ export default {
             },
             {
               data: this.humidities,
-              label: "Humidity(%)",
+              label: "Humidity (%)",
               //backgroundColor: ["rgba(71, 183,132,0.5)"],
               borderColor: ["rgb(71, 183,132,.5)"],
               borderWidth: 3,
