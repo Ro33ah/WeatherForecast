@@ -9,6 +9,7 @@ namespace backend.Models
         public IEnumerable<List> List { get; set; }
 
     }
+    
     public class List
     {
         public Main Main { get; set; }
@@ -29,6 +30,7 @@ namespace backend.Models
     {
         public float Temp { get; set; }
         public int Humidity { get; set; }
+
     }
 }
 
