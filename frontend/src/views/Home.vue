@@ -2,8 +2,14 @@
   <p class="homeText">
     A SIMPLE WEBPAGE :D
     <br>
-    <b-form-select class="col-sm-4" v-model="selected" :options="options" @change="getWeather($event)"/>
+    <b-form-input list="test"></b-form-input>
+    <datalist id="test">
+      <option v-for="option in options" v-bind:value="option.text" v-on:change="getWeather($option.value)">{{ option.text}}
+        </option>
+    </datalist>
     <br>
+    <!-- <b-form-select class="col-sm-4" v-model="selected" :options="options" @change="getWeather($event)"/>
+    <br> -->
     <canvas v-show="isCanvasNull" id="forecastChart">
     </canvas>
   </p>
@@ -18,6 +24,13 @@ export default {
   name: 'Home',
   data() {
     return {
+      // inputMask:{
+        
+      //     { id: '2879139', text: 'Leipzig'},
+      //     { id: '2929670', text: 'Erfurt' },
+      //     { id: '2950158', text: 'Berlin' },
+      //     { id: '2911298', text: 'Hamburg'},
+      // },
       selected: null,
       options: [ 
         { value: null, text: 'Choose a city', disabled: true},
@@ -46,8 +59,8 @@ export default {
         console.log(this.dates);
         console.log(this.temps);
         console.log(this.humidities);
-          var ctx = document.getElementById("forecastChart").getContext('2d');
-      this.chart = new Chart(ctx, {
+        var ctx = document.getElementById("forecastChart").getContext('2d');
+        this.chart = new Chart(ctx, {
         type: "line",
         data: {
           isCanvasNull: '',

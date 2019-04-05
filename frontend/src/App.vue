@@ -14,9 +14,12 @@
 </template>
 
 <script>
+import Vue from "vue";
 import Navbar from './components/Navbar';
 import Chart from "chart.js";
 import {Line} from "vue-chartjs";
+import VueMask from "v-mask"
+Vue.use(VueMask);
 
 export default {
   name: 'App',
